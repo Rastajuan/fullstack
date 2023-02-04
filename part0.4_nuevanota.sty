@@ -1,0 +1,71 @@
+READING 5 HOURS
+WORKING.8,5 HOURS
+
+1. El navegador envía una solicitud HTTP GET al servidor para obtener el contenido de la página en la URL especificada.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+
+2. El servidor responde con el código HTML que representa la página.
+
+server-->browser: HTML-code
+
+3. El navegador envía una solicitud HTTP GET al servidor para obtener el archivo de estilo CSS necesario para la página.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+4. El servidor responde con el archivo de estilo CSS.
+
+server-->browser: main.css
+
+5. El navegador envía una solicitud HTTP GET al servidor para obtener el archivo JavaScript necesario para la página.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+6.El servidor responde con el archivo JavaScript.
+
+server-->browser: main.js
+
+7.Se muestra una nota para indicar que el navegador comienza a ejecutar el código JavaScript, que realiza una solicitud HTTP GET al servidor para obtener los datos en formato JSON.
+
+nota sobre el navegador: el navegador comienza a ejecutar el código javascript que solicita datos JSON del servidor
+server-->browser: main.js
+
+8. El navegador envía una solicitud HTTP GET al servidor para obtener los datos en formato JSON.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+9. El servidor responde con los datos en formato JSON.
+
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+
+10. Se muestra una nota para indicar que el navegador ejecuta un controlador de eventos que renderiza las notas en la pantalla.
+
+nota sobre el navegador: el navegador ejecuta el controlador de eventos que muestra las notas para mostrar
+
+11. El navegador envía una solicitud HTTP POST al servidor para enviar los datos de la nueva nota creada por el usuario.
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_json
+
+12. Se muestra una nota para indicar que el usuario escribió algo en el campo de texto y hizo clic en el botón submit.
+
+nota sobre el navegador: el usuario escribe algo en el campo de texto y hace clic en el botón enviar.
+
+13.El navegador envía los datos de la nueva nota en formato JSON en la solicitud HTTP POST.
+
+browser->server: JSON data: { content: "user entered text", date: "current date" }
+
+14. El servidor responde con un código HTTP 201 Created para indicar que la nueva nota se ha creado exitosamente.
+
+server-->browser: HTTP 201 Created
+
+15. Se muestra una nota para indicar que el navegador recibe la respuesta del servidor y actualiza la pantalla para mostrar la nueva nota.
+
+note over browser: browser receives the response and updates the display
+
+
+
+
+
+
+
+
