@@ -1,0 +1,26 @@
+en la versión de aplicación de una sola página, el navegador interactúa con el servidor enviando una solicitud HTTP POST para crear una nueva nota y luego una solicitud HTTP GET para obtener los datos actualizados de las notas. Finalmente, se ejecuta un controlador de eventos para actualizar la interfaz de usuario con la nueva nota.
+
+
+1. El navegador envía una solicitud HTTP POST a la URL https://studies.cs.helsinki.fi/exampleapp/new_note_spa para crear una nueva nota en el servidor.
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+2. El servidor responde con un código HTTP 201, indicando que la nota se ha creado con éxito.
+
+server-->browser: HTTP 201
+
+3. El navegador envía una nueva solicitud HTTP GET a la URL https://studies.cs.helsinki.fi/exampleapp/data.json para obtener los datos actualizados de las notas en formato JSON.
+
+4. El navegador envía una solicitud HTTP GET a la URL https://studies.cs.helsinki.fi/exampleapp/data.json para obtener los datos actualizados de las notas.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+5. El servidor envía los datos actualizados de las notas en formato JSON.
+
+server-->browser: [{ content: "HTML es fácil", date: "2019-05-23" }, ..., { content: "Mi nueva nota", date: "2023-02-04" }]
+
+6. Se muestra una nota para indicar que el navegador ejecuta el controlador de eventos que muestra las notas actualizadas en la pantalla.
+
+nota sobre navegador
+
+7.El navegador ejecuta el controlador de eventos que actualiza la interfaz de usuario con la nueva nota.

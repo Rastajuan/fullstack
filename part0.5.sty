@@ -1,0 +1,61 @@
+1. El navegador envía una solicitud HTTP GET al servidor para obtener el código HTML de la página de la aplicación de notas.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+2.El servidor responde con el código HTML de la página.
+
+server-->browser: HTML-code
+
+3. El navegador envía una solicitud HTTP GET al servidor para obtener el archivo CSS necesario para dar estilo a la página.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+4. El servidor responde con el archivo CSS.
+
+server-->browser: main.css
+
+5. El navegador envía una solicitud HTTP GET al servidor para obtener el archivo JavaScript necesario para hacer la aplicación funcionar.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+6. El servidor responde con el archivo JavaScript.
+
+server-->browser: main.js
+
+7. El navegador empieza a ejecutar el código JavaScript.
+
+nota sobre el navegador
+
+8. El navegador envía una solicitud HTTP GET al servidor para obtener los datos de las notas en formato JSON.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+9. El servidor responde con los datos de las notas en formato JSON.
+
+server-->browser: [{ content: "HTML es fácil", date: "2019-05-23" }, ...]
+
+10. Se muestra una nota para indicar que el navegador ejecuta el controlador de eventos que muestra las notas en la pantalla.
+
+nota sobre el navegador
+
+11. El navegador envía una solicitud HTTP POST al servidor cuando el usuario escribe algo en el campo de texto y hace clic en el botón submit. La solicitud incluye los datos de la nueva nota.
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+12. El servidor responde con un código HTTP 201, indicando que la nota se ha creado con éxito.
+server-->browser: HTTP 201
+
+13. El navegador envía una nueva solicitud HTTP GET al servidor para obtener los datos actualizados de las notas en formato JSON.
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+14. El servidor responde con los datos actualizados de las notas en formato JSON.
+
+server-->browser: [{ content: "HTML es fácil", date: "2019-05-23" }, ..., { content: "Mi nueva nota", date: "2023-02-04" }]
+
+15. Se muestra una nota para indicar que el navegador ejecuta el controlador de eventos que muestra las notas actualizadas en la pantalla.
+
+nota sobre el navegador
+
+
+
